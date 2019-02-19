@@ -11,8 +11,6 @@ const headers = {
 
 http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    // res.setHeader('Access-Control-Allow-Origin', '*'); - allow posts from anywhere - not recommended
-
     if (req.method === 'OPTIONS') {
         res.writeHead(204, headers);
         res.end();
@@ -21,7 +19,6 @@ http.createServer((req, res) => {
 
     if (['GET', 'POST', 'PUT'].indexOf(req.method) > -1) {
         req.on('data', chunk => {
-            // posted data - not formatted
             console.log(chunk.toString());
         });
 

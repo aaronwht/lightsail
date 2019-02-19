@@ -6,7 +6,7 @@ const memberSchema = new Schema({
 });
 const Member = mongoose.model("member", memberSchema);
 
-mongoose.connect("mongodb://my_user:my_password@localhost:27017/mern", { useNewUrlParser: true });
+mongoose.connect("mongodb://my_user:my_pwd@localhost:27017/mern", { useNewUrlParser: true });
 const http = require('http');
 http.createServer((req, res) => {
   Member.find({}, "firstName lastName").then(members => {
