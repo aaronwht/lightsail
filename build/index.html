@@ -1,0 +1,23 @@
+<html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        axios.get('members')
+            .then(function (res) {
+                var members = '';
+                for (var i = 0; i < res.data.length; i++) {
+                    members += res.data[i].firstName + ' ' + res.data[i].lastName + '<br/>';
+                }
+                document.getElementById('content').innerHTML = members;
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    });
+</script>
+
+<body>
+    <div id="content"></div>
+</body>
+
+</html>
