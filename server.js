@@ -4,7 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 
 // fetches root files from client/build
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+//app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 // May only be exist once in app
 mongoose.connect("mongodb://my_user:my_password@localhost:27017/mern", { useNewUrlParser: true });
@@ -20,13 +20,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-//app.get('/', (req, res) => {
-//  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-//});
-
-//app.get('/favicon.ico', (req, res) => {
-//  res.sendFile(path.join(`${__dirname}/favicon.ico`));
-//});
+app.get('/favicon.ico', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/favicon.ico`));
+});
 
 app.get('/members', (req, res) => {
   Member.find({}, "firstName lastName").then(members => {
