@@ -1,6 +1,6 @@
-# AWS Lightsail with Node.js and MongoDB (MEAN/MERN)
+# Deploy to AWS Lightsail with Node.js & MongoDB
 
-This repo is intended to help you deploy a basic Node.js app with a MongoDB database.  The Node.js app will serve out static content (index.html, CSS, client-side JavaScript) which point to a Node.js endpoints.
+This repository helps you deploy a Node.js application with a MongoDB database.  The Node.js application serves out static content (index.html, CSS, client-side JavaScript) which points to the Node.js endpoints.
 
 Watch the Video Tutorial here:
 
